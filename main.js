@@ -29,25 +29,44 @@ function pomodoroClock(DEFAULT_POMODORO, DEFAULT_REST){
           pomodoroPause();
           changeMode();
         }
-      },1000);
+      },100);
     }else{
       pomodoroPause();
     }
   };
   function changeMode(){
-    pomodoroAlert();
     isRestMode = !isRestMode;
+    pomodoroChange();
     if(isRestMode){
       seconds = rest;
     }else{ seconds = pomodoro; }
     updatePomodoro(seconds);
-    pomodoroStart();
   };
 
-  function pomodoroAlert(){
+  function pomodoroChange(){
+    $('.mode-name').empty();
+    if(isRestMode){
+      $('.mode-name').append('Rest');
+    }else{ $('.mode-name').append('Pomodoro'); }
+    //audio alert
     var audio = new Audio('audio/magic_immune.mp3');
     audio.play();
-    alert('TIME IS OVER');
+    //make screen blink for 5 seconds
+    var blinkInterval = setInterval(function(){
+      $('body').toggleClass( "rest-body" );
+    },500)
+    setTimeout(function(){
+      clearInterval(blinkInterval);
+      //change colors
+      if(isRestMode){
+        $('body').addClass( "rest-body" );
+      }else{
+        $('body').removeClass()( "rest-body" )
+      }
+      $('.timer-circle').toggleClass("rest-circle");
+      pomodoroStart();
+    },5000)
+
   };
 
   function pomodoroPause(){
@@ -67,12 +86,12 @@ function pomodoroClock(DEFAULT_POMODORO, DEFAULT_REST){
   };
 
   function changePomodoroTime(minutes, isPomodoro){
-    if(isPomodoro){
+    if(isPomodoro && !((pomodoro + minutes) === 59)){
       pomodoro = pomodoro + ( minutes * 60);
       $('.pomodoro-total').empty();
       $('.pomodoro-total').append(convertTime(pomodoro));
 
-    }else{
+    }else if(!isPomodoro && !((rest + minutes) === 59)){
       rest = rest + ( minutes * 60);
       $('.rest-total').empty();
       $('.rest-total').append(convertTime(rest));
@@ -93,6 +112,6 @@ function pomodoroClock(DEFAULT_POMODORO, DEFAULT_REST){
 }
 
 
-const DEFAULT_REST = 300;
-const DEFAULT_POMODORO = 30;
+const DEFAULT_REST = 5 * 60;
+const DEFAULT_POMODORO =  25 * 60;
 pomodoroClock(DEFAULT_POMODORO, DEFAULT_REST);

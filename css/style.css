@@ -1,4 +1,50 @@
+body{
+  background-color: #C63D0F;
+  }
 .pomodoro{
   padding-top: 30px;
+  font-family: 'Roboto', sans-serif;
 
+}
+.buttons{
+  margin-bottom: 30px;
+}
+.timer-col{
+  padding: 0 0;
+}
+.timer-circle{
+  padding-top: 100px;
+  font-size: 70px;
+  border-radius: 50%;
+	width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  font-weight: 100;
+  font-style: italic;
+  background-color:#3B3738 ;
+  color: #7E8F7C;
+
+}
+.btn-start, .btn-pause, .btn-reset{
+  margin: 0 5px;
+}
+
+.__pallet{
+  color:#C63D0F;
+  color:#3B3738;
+  color:#FDF3E7;
+  color:#7E8F7C;
+
+}
+.rest-circle{
+  background-color: #7E8F7C;
+  color: #3B3738;
+}
+.rest-body{
+  background-color: #FDF3E7;
+}
+.mode-name{
+  font-size: 40px;
+  font-weight: 100;
+  font-style: italic;
 }

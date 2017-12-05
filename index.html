@@ -5,29 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Pomodoro Clock</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100i,400" rel="stylesheet">
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <div class="container text-center pomodoro">
     <div class="row">
-      <div class="col">
+      <div class="col buttons">
         <button class="btn btn-start">Start</button>
         <button class="btn btn-pause">Pause</button>
         <button class="btn btn-reset">Reset</button>
-        <p class="timer"></p>
       </div>
     </div>
     <div class="row">
-      <div class="col-6 rest-form">
+      <div class="col timer-col">
+        <div class="timer-circle col-md-offset-3">
+          <p class="timer"></p>
+        </div>
+      </div>
+  </div>
+    <div class="row">
+      <div class="col-6 order-md-first col-md-4 rest-form">
         <button class="btn btn-plus-rest">+</button>
         <button class="btn btn-minus-rest">-</button>
         <p class="rest-total"></p>
+        <p>REST</p>
       </div>
-      <div class="col-6 pomodoro-form">
+      <div class="col-12 order-first col-md-4">
+        <p class="mode-name">Pomodoro</p>
+      </div>
+      <div class="col-6 col-md-4 pomodoro-form">
         <button class="btn btn-plus-pomodoro">+</button>
         <button class="btn btn-minus-pomodoro">-</button>
         <p class="pomodoro-total"></p>
+        <p>POMODORO</p>
       </div>
     </div>
   </div>
