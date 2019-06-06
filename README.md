@@ -1,4 +1,11 @@
- # Pomodoro Clock
+Old repository used for learning purpose.
+
+Now archived...
+
+Keep learning, keep improving!
+
+------------------------------
+# Pomodoro Clock
 
  My version of the Pomodoro Clock
 
@@ -7,7 +14,3 @@
  * Bootstrap
  * jQuery
  * Love
-
-## Contributing
-
-Feel free to give me a tip or make a pull request. I always looking to improve my code.
